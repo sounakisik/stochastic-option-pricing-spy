@@ -56,22 +56,7 @@ Monte Carlo pricing estimates:
 C_0 = e^{-rT}\mathbb{E}^{\mathbb{Q}}[\max(S_T-K,0)]
 ```
 
-## Project Structure
-
-```text
-spy_stochastic_option_pricing_project/
-│
-├── spy_option_pricing_project.py
-├── requirements.txt
-├── README.md
-└── outputs/
-    ├── generated plots
-    ├── processed SPY data
-    ├── implied volatility table
-    └── project_summary.txt
-```
-
-## How to Run
+## How to Run the codebase
 
 Install dependencies:
 
@@ -122,10 +107,11 @@ The project highlights important limitations of Black-Scholes:
 
 This makes the project relevant not only for pricing but also for model validation and model risk management.
 
-## CV Bullet
 
-Built a stochastic option pricing framework for SPY options using Geometric Brownian Motion, Itô's Lemma, and the Black-Scholes PDE; implemented analytical pricing, Monte Carlo validation, Greeks estimation, historical volatility calibration, implied volatility extraction, and model risk diagnostics.
+## Limitations
 
-## Interview Explanation
-
-I developed an end-to-end option pricing framework for SPY European options. I started by modeling the underlying asset using Geometric Brownian Motion, derived the Black-Scholes pricing setup, implemented analytical pricing and Monte Carlo validation, computed Greeks for risk sensitivity, and then moved toward model validation by estimating historical volatility, extracting implied volatility, and analyzing where Black-Scholes assumptions break down.
+- The base implementation assumes European options.
+- The Black-Scholes model assumes constant volatility and no jumps.
+- The implied volatility smile section uses a synthetic example unless real option-chain data is added.
+- Historical volatility depends on the chosen lookback period.
+- The project is educational and not intended for live trading or production pricing.
